@@ -1,0 +1,74 @@
+.voltar {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.detalhe {
+  display: flex;
+  gap: 30px;
+  background-color: #2b2b2b;
+  padding: 25px;
+  border-radius: 8px;
+}
+
+.detalhe img {
+  width: 280px;
+  height: 280px;
+  border-radius: 8px;
+}
+
+.info h1 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.marca {
+  color: #ff7f27;
+  font-weight: bold;
+  margin-top: 0;
+}
+
+.info p,
+.info li {
+  color: #cccccc;
+}
+
+.barra {
+  width: 300px;
+  height: 14px;
+  background-color: #444444;
+  border-radius: 7px;
+}
+
+.preenchido {
+  height: 14px;
+  background-color: #ff7f27;
+  border-radius: 7px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #2b2b2b;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid #444444;
+}
+
+th {
+  color: #999999;
+}
+
+tr.melhor td {
+  color: #22c55e;
+  font-weight: bold;
+}
+
+.economia {
+  margin-top: 15px;
+  color: #22c55e;
+}
