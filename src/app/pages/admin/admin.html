@@ -1,1 +1,135 @@
-<p>admin works!</p>
+<h1>Área administrativa</h1>
+
+@if (mensagem() != '') {
+  <p class="sucesso">{{ mensagem() }}</p>
+}
+
+<div class="caixa">
+  @if (pecaEditando() == null) {
+    <h2>Cadastrar nova peça</h2>
+  } @else {
+    <h2>Editando: {{ pecaEditando()?.nome }}</h2>
+  }
+
+  <form [formGroup]="formulario" (ngSubmit)="salvar()">
+    <div class="campos">
+
+      <label>
+        Nome *
+        <input formControlName="nome">
+        @if (campoInvalido('nome')) {
+          <span class="erro">Digite o nome (mínimo 3 letras).</span>
+        }
+      </label>
+
+      <label>
+        Marca *
+        <input formControlName="marca">
+        @if (campoInvalido('marca')) {
+          <span class="erro">Digite a marca.</span>
+        }
+      </label>
+
+      <label>
+        Categoria *
+        <select formControlName="categoria">
+          <option value="">Selecione</option>
+          @for (cat of categorias(); track cat.id) {
+            <option [value]="cat.slug">{{ cat.nome }}</option>
+          }
+        </select>
+        @if (campoInvalido('categoria')) {
+          <span class="erro">Escolha a categoria.</span>
+        }
+      </label>
+
+      <label>
+        Soquete
+        <select formControlName="soquete">
+          <option value="">Nenhum</option>
+          <option value="AM5">AM5</option>
+          <option value="LGA1700">LGA1700</option>
+        </select>
+      </label>
+
+      <label>
+        Tipo de memória
+        <select formControlName="tipoMemoria">
+          <option value="">Nenhum</option>
+          <option value="DDR4">DDR4</option>
+          <option value="DDR5">DDR5</option>
+        </select>
+      </label>
+
+      <label>
+        Potência (W) - só fontes
+        <input type="number" formControlName="potencia">
+        @if (campoInvalido('potencia')) {
+          <span class="erro">A potência não pode ser negativa.</span>
+        }
+      </label>
+
+      <label>
+        Consumo / TDP (W) *
+        <input type="number" formControlName="tdp">
+        @if (campoInvalido('tdp')) {
+          <span class="erro">Digite o consumo (0 ou mais).</span>
+        }
+      </label>
+
+      <label>
+        Preço Mercado Livre (R$) *
+        <input type="number" formControlName="precoMercadoLivre">
+        @if (campoInvalido('precoMercadoLivre')) {
+          <span class="erro">Digite um preço maior que zero.</span>
+        }
+      </label>
+
+      <label>
+        Preço AliExpress (R$) *
+        <input type="number" formControlName="precoAliexpress">
+        @if (campoInvalido('precoAliexpress')) {
+          <span class="erro">Digite um preço maior que zero.</span>
+        }
+      </label>
+    </div>
+
+    <p class="aviso">* obrigatório. O botão só libera quando todos os campos estiverem corretos.</p>
+
+    <button type="submit" class="salvar" [disabled]="formulario.invalid">
+      @if (pecaEditando() == null) {
+        Cadastrar
+      } @else {
+        Salvar alterações
+      }
+    </button>
+    <button type="button" class="cancelar" (click)="limpar()">Cancelar</button>
+  </form>
+</div>
+
+<div class="pesquisa">
+  <input [formControl]="busca" placeholder="Pesquisar peça..." (keyup.enter)="pesquisar()">
+  <button (click)="pesquisar()">Pesquisar</button>
+</div>
+
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>Categoria</th>
+    <th>Mercado Livre</th>
+    <th>AliExpress</th>
+    <th>Ações</th>
+  </tr>
+  @for (peca of componentes(); track peca.id) {
+    <tr>
+      <td>{{ peca.nome }}</td>
+      <td>{{ peca.categoria }}</td>
+      <td>R$ {{ peca.precoMercadoLivre }}</td>
+      <td>R$ {{ peca.precoAliexpress }}</td>
+      <td>
+        <button class="editar" (click)="editar(peca)">Editar</button>
+        <button class="excluir" (click)="excluir(peca)">Excluir</button>
+      </td>
+    </tr>
+  }
+</table>
