@@ -1,5 +1,5 @@
 import { Component, OnInit, signal } from '@angular/core';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { ComponenteService } from '../../services/componente-service';
 import { Componente } from '../../models/componente';
 
@@ -13,14 +13,18 @@ export class ComponenteDetalhe implements OnInit {
 
   peca = signal<Componente | null>(null);
 
-  constructor(private rota: ActivatedRoute, private componenteService: ComponenteService) {
+  constructor(private rota: ActivatedRoute, private router: Router, private componenteService: ComponenteService) {
   }
 
   ngOnInit() {
     let id = Number(this.rota.snapshot.paramMap.get('id'));
 
     this.componenteService.buscarPorId(id).subscribe(dados => {
-      this.peca.set(dados);
+      if (dados == null) {
+        this.router.navigate(['/']);
+      } else {
+        this.peca.set(dados);
+      }
     });
   }
 
