@@ -1,1 +1,62 @@
-<p>componente-detalhe works!</p>
+<a routerLink="/montador" class="voltar">← Voltar para o montador</a>
+
+@if (peca(); as p) {
+
+  <div class="detalhe">
+    <img [src]="p.imagem" [alt]="p.nome">
+
+    <div class="info">
+      <h1>{{ p.nome }}</h1>
+      <p class="marca">{{ p.marca }}</p>
+      <p>{{ p.descricao }}</p>
+
+      <h3>Especificações</h3>
+      <ul>
+        <li>Categoria: {{ p.categoria }}</li>
+        <li>Consumo: {{ p.tdp }}W</li>
+        @if (p.soquete) {
+          <li>Soquete: {{ p.soquete }}</li>
+        }
+        @if (p.tipoMemoria) {
+          <li>Memória: {{ p.tipoMemoria }}</li>
+        }
+        @if (p.potencia) {
+          <li>Potência: {{ p.potencia }}W</li>
+        }
+      </ul>
+
+      @if (p.benchmark > 0) {
+        <h3>Desempenho (benchmark)</h3>
+        <div class="barra">
+          <div class="preenchido" [style.width.%]="p.benchmark"></div>
+        </div>
+        <p>{{ p.benchmark }} de 100</p>
+      }
+    </div>
+  </div>
+
+  <h2>Comparação de preços</h2>
+
+  <table>
+    <tr>
+      <th>Loja</th>
+      <th>Preço</th>
+      <th></th>
+    </tr>
+    <tr [class.melhor]="p.precoMercadoLivre <= p.precoAliexpress">
+      <td>Mercado Livre</td>
+      <td>R$ {{ p.precoMercadoLivre.toFixed(2) }}</td>
+      <td><a href="https://lista.mercadolivre.com.br/{{ p.nome }}" target="_blank">Ver na loja</a></td>
+    </tr>
+    <tr [class.melhor]="p.precoAliexpress < p.precoMercadoLivre">
+      <td>AliExpress</td>
+      <td>R$ {{ p.precoAliexpress.toFixed(2) }}</td>
+      <td><a href="https://pt.aliexpress.com/w/wholesale-{{ p.nome }}.html" target="_blank">Ver na loja</a></td>
+    </tr>
+  </table>
+
+  <p class="economia">Comprando na loja mais barata você economiza R$ {{ economia(p).toFixed(2) }}.</p>
+
+} @else {
+  <p>Carregando...</p>
+}
