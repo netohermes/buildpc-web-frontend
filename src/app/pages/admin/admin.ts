@@ -1,9 +1,7 @@
 import { Component, OnInit, signal } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ComponenteService } from '../../services/componente-service';
-import { CategoriaService } from '../../services/categoria-service';
 import { Componente } from '../../models/componente';
-import { Categoria } from '../../models/categoria';
 
 @Component({
   selector: 'app-admin',
@@ -14,7 +12,6 @@ import { Categoria } from '../../models/categoria';
 export class Admin implements OnInit {
 
   componentes = signal<Componente[]>([]);
-  categorias = signal<Categoria[]>([]);
 
   // peça que esta sendo editada (null = cadastrando uma nova)
   pecaEditando = signal<Componente | null>(null);
@@ -37,17 +34,11 @@ export class Admin implements OnInit {
     precoAliexpress: new FormControl<number | null>(null, [Validators.required, Validators.min(0.01)])
   });
 
-  constructor(
-    private componenteService: ComponenteService,
-    private categoriaService: CategoriaService
-  ) {
+  constructor(private componenteService: ComponenteService) {
   }
 
   ngOnInit() {
     this.carregar();
-    this.categoriaService.listar().subscribe(dados => {
-      this.categorias.set(dados);
-    });
   }
 
   // busca todas as peças

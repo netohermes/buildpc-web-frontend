@@ -34,9 +34,12 @@
         Categoria *
         <select formControlName="categoria">
           <option value="">Selecione</option>
-          @for (cat of categorias(); track cat.id) {
-            <option [value]="cat.slug">{{ cat.nome }}</option>
-          }
+          <option value="processador">Processador</option>
+          <option value="placa-mae">Placa-mãe</option>
+          <option value="memoria-ram">Memória RAM</option>
+          <option value="placa-de-video">Placa de Vídeo</option>
+          <option value="fonte">Fonte</option>
+          <option value="armazenamento">Armazenamento</option>
         </select>
         @if (campoInvalido('categoria')) {
           <span class="erro">Escolha a categoria.</span>
