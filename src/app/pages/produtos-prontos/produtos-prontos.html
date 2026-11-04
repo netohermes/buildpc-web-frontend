@@ -1,1 +1,44 @@
-<p>produtos-prontos works!</p>
+<h1>Notebooks e PCs prontos</h1>
+
+<form class="filtros" [formGroup]="filtros">
+  <label>
+    Tipo
+    <select formControlName="tipo">
+      <option value="">Todos</option>
+      <option value="notebook">Notebook</option>
+      <option value="pc">PC</option>
+    </select>
+  </label>
+
+  <label>
+    Uso
+    <select formControlName="categoriaUso">
+      <option value="">Todos</option>
+      <option value="Gamer">Gamer</option>
+      <option value="Trabalho">Trabalho</option>
+      <option value="Estudo">Estudo</option>
+    </select>
+  </label>
+
+  <label>
+    Preço máximo (R$)
+    <input type="number" formControlName="precoMaximo">
+  </label>
+</form>
+
+@if (produtosFiltrados().length == 0) {
+  <p class="vazio">Nenhum produto encontrado.</p>
+}
+
+<div class="cards">
+  @for (produto of produtosFiltrados(); track produto.id) {
+    <div class="card">
+      <img [src]="produto.imagem" [alt]="produto.nome">
+      <span class="etiqueta">{{ produto.categoriaUso }}</span>
+      <h3>{{ produto.nome }}</h3>
+      <p class="descricao">{{ produto.descricao }}</p>
+      <p class="preco">R$ {{ menorPreco(produto).toFixed(2) }}</p>
+      <p class="loja">no {{ lojaMaisBarata(produto) }}</p>
+    </div>
+  }
+</div>
