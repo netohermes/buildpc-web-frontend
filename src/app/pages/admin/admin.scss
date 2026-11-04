@@ -1,0 +1,127 @@
+.sucesso {
+  background-color: #14532d;
+  color: #22c55e;
+  padding: 12px;
+  border-radius: 5px;
+}
+
+.caixa {
+  background-color: #2b2b2b;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.campos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.campos label {
+  display: flex;
+  flex-direction: column;
+  width: 220px;
+  font-size: 14px;
+  color: #cccccc;
+}
+
+input,
+select {
+  margin-top: 5px;
+  padding: 8px;
+  border-radius: 4px;
+  border: 2px solid #555555;
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+input.ng-invalid.ng-touched,
+select.ng-invalid.ng-touched {
+  border-color: #ef4444;
+}
+
+input.ng-valid.ng-touched,
+select.ng-valid.ng-touched {
+  border-color: #22c55e;
+}
+
+.erro {
+  color: #ef4444;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.aviso {
+  color: #999999;
+  font-size: 13px;
+}
+
+button {
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-right: 8px;
+  color: #ffffff;
+}
+
+.salvar {
+  background-color: #ff7f27;
+}
+
+.salvar:disabled {
+  background-color: #555555;
+  color: #999999;
+  cursor: not-allowed;
+}
+
+.cancelar {
+  background-color: #444444;
+}
+
+.pesquisa {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.pesquisa input {
+  margin-top: 0;
+  margin-right: 8px;
+  width: 300px;
+}
+
+.pesquisa button {
+  background-color: #ff7f27;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #2b2b2b;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 10px;
+  border-bottom: 1px solid #444444;
+  font-size: 14px;
+}
+
+th {
+  color: #999999;
+}
+
+.ver {
+  background-color: #555555;
+}
+
+.editar {
+  background-color: #3b82f6;
+}
+
+.excluir {
+  background-color: #ef4444;
+}

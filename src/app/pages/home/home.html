@@ -1,0 +1,55 @@
+
+<div class="banner">
+  <h1>Monte seu PC pelo menor preço</h1>
+  <p>Compare os preços do Mercado Livre e do AliExpress e veja se as peças são compatíveis.</p>
+  <a routerLink="/admin" class="botao">Cadastrar peças</a>
+</div>
+
+
+<h2>Ofertas do dia</h2>
+<p class="subtitulo">Peças que mais baixaram de preço nos últimos meses</p>
+
+@if (ofertas().length == 0) {
+  <p>Carregando...</p>
+}
+
+<div class="cards">
+  @for (peca of ofertas(); track peca.id) {
+    <div class="card">
+      <img [src]="peca.imagem" [alt]="peca.nome">
+      <h3>{{ peca.nome }}</h3>
+      <p class="preco">R$ {{ menorPreco(peca).toFixed(2) }}</p>
+      <p class="loja">no {{ lojaMaisBarata(peca) }}</p>
+      <p class="queda">Baixou R$ {{ quedaDePreco(peca).toFixed(2) }}</p>
+      <a routerLink="/componente/{{ peca.id }}">Ver detalhes</a>
+    </div>
+  }
+</div>
+
+
+<h2>Destaques de desempenho</h2>
+<p class="subtitulo">Peças com as melhores notas de benchmark</p>
+
+<div class="cards">
+  @for (peca of destaques(); track peca.id) {
+    <div class="card">
+      <img [src]="peca.imagem" [alt]="peca.nome">
+      <h3>{{ peca.nome }}</h3>
+      <p class="nota">Nota: {{ peca.benchmark }}/100</p>
+      <p class="preco">R$ {{ menorPreco(peca).toFixed(2) }}</p>
+      <a routerLink="/componente/{{ peca.id }}">Ver detalhes</a>
+    </div>
+  }
+</div>
+
+
+<h2>Notícias do mercado</h2>
+
+<div class="noticias">
+  @for (noticia of noticias; track noticia.titulo) {
+    <div class="noticia">
+      <h3>{{ noticia.titulo }}</h3>
+      <p>{{ noticia.resumo }}</p>
+    </div>
+  }
+</div>
