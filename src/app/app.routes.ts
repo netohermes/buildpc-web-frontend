@@ -1,14 +1,17 @@
 import { Routes } from '@angular/router';
+import { Home } from './pages/home/home';
+import { ComponenteDetalhe } from './pages/componente-detalhe/componente-detalhe';
+import { Admin } from './pages/admin/admin';
 
 
 export const routes: Routes = [
 
-    { path: '', loadComponent: () => import('./pages/home/home').then(m => m.Home) },
+    { path: '', component: Home },
 
 
-    { path: 'componente/:id', loadComponent: () => import('./pages/componente-detalhe/componente-detalhe').then(m => m.ComponenteDetalhe) },
+    { path: 'componente/:id', component: ComponenteDetalhe },
 
 
-    { path: 'admin', loadComponent: () => import('./pages/admin/admin').then(m => m.Admin) },
+    { path: 'admin', component: Admin },
     { path: '**', redirectTo: '' }
 ];
