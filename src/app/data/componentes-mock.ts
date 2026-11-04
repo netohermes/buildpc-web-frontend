@@ -1,6 +1,5 @@
 import { Componente } from '../models/componente';
 
-// lista de peças usada no lugar da api (copiada do antigo db.json)
 export const COMPONENTES: Componente[] = [
   {
     id: 1,

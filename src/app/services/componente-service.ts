@@ -8,14 +8,12 @@ import { COMPONENTES } from '../data/componentes-mock';
 })
 export class ComponenteService {
 
-  // cópia da lista mock (as alterações ficam só na memória)
   componentes: Componente[] = COMPONENTES.map(c => ({ ...c }));
 
   constructor() {
   }
 
 
-  // devolve uma nova lista para a tela sempre perceber a mudança
   listar() {
     return of(this.componentes.slice());
   }
@@ -32,7 +30,6 @@ export class ComponenteService {
   }
 
 
-  // procura pelo nome ou marca (texto vazio devolve tudo)
   pesquisar(texto: string) {
     let busca = texto.toLowerCase();
     let lista = this.componentes.filter(c =>
@@ -42,7 +39,6 @@ export class ComponenteService {
   }
 
 
-  // o id novo é o maior id + 1
   cadastrar(componente: Componente) {
     let maiorId = 0;
     for (let c of this.componentes) {
@@ -56,7 +52,6 @@ export class ComponenteService {
   }
 
 
-  // troca a peça que tem o mesmo id
   atualizar(componente: Componente) {
     let posicao = this.componentes.findIndex(c => c.id == componente.id);
     if (posicao != -1) {
@@ -66,7 +61,6 @@ export class ComponenteService {
   }
 
 
-  // remove a peça com o id
   excluir(id: number) {
     this.componentes = this.componentes.filter(c => c.id != id);
     return of(null);

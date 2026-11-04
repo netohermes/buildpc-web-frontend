@@ -11,14 +11,12 @@ import { Componente } from '../../models/componente';
 })
 export class ComponenteDetalhe implements OnInit {
 
-  // a peça que esta sendo exibida
   peca = signal<Componente | null>(null);
 
   constructor(private rota: ActivatedRoute, private componenteService: ComponenteService) {
   }
 
   ngOnInit() {
-    // pega o id que esta no endereço (ex: /componente/7)
     let id = Number(this.rota.snapshot.paramMap.get('id'));
 
     this.componenteService.buscarPorId(id).subscribe(dados => {
@@ -26,7 +24,6 @@ export class ComponenteDetalhe implements OnInit {
     });
   }
 
-  // diferença de preço entre as duas lojas
   economia(peca: Componente) {
     return Math.abs(peca.precoMercadoLivre - peca.precoAliexpress);
   }

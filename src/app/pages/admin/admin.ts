@@ -13,15 +13,12 @@ export class Admin implements OnInit {
 
   componentes = signal<Componente[]>([]);
 
-  // peça que esta sendo editada (null = cadastrando uma nova)
   pecaEditando = signal<Componente | null>(null);
 
   mensagem = signal('');
 
-  // campo de pesquisa
   busca = new FormControl('');
 
-  // formulario com as validações
   formulario = new FormGroup({
     nome: new FormControl('', [Validators.required, Validators.minLength(3)]),
     marca: new FormControl('', Validators.required),
@@ -41,29 +38,24 @@ export class Admin implements OnInit {
     this.carregar();
   }
 
-  // busca todas as peças
   carregar() {
     this.componenteService.listar().subscribe(dados => {
       this.componentes.set(dados);
     });
   }
 
-  // pesquisa pelo texto (se estiver vazio, a api devolve tudo)
   pesquisar() {
     this.componenteService.pesquisar(this.busca.value || '').subscribe(dados => {
       this.componentes.set(dados);
     });
   }
 
-  // true se o campo tem erro e o usuario ja mexeu nele
   campoInvalido(nome: string) {
     let campo = this.formulario.get(nome);
     return campo!.invalid && campo!.touched;
   }
 
-  // cadastra ou salva a edição
   salvar() {
-    // se tiver erro, mostra todos os erros e não envia
     if (this.formulario.invalid) {
       this.formulario.markAllAsTouched();
       return;
@@ -72,7 +64,6 @@ export class Admin implements OnInit {
     let dados: any = this.formulario.value;
 
     if (this.pecaEditando() == null) {
-      // peça nova: completa os campos que não estão no formulario
       let nova = {
         ...dados,
         benchmark: 0,
@@ -86,7 +77,6 @@ export class Admin implements OnInit {
         this.carregar();
       });
     } else {
-      // edição: junta a peça antiga com os valores novos do formulario
       let atualizada = { ...this.pecaEditando(), ...dados };
       this.componenteService.atualizar(atualizada).subscribe(() => {
         this.limpar();
@@ -96,7 +86,6 @@ export class Admin implements OnInit {
     }
   }
 
-  // coloca a peça no formulario
   editar(peca: Componente) {
     this.limpar();
     this.pecaEditando.set(peca);
@@ -104,7 +93,6 @@ export class Admin implements OnInit {
     window.scrollTo(0, 0);
   }
 
-  // exclui depois de confirmar
   excluir(peca: Componente) {
     if (confirm('Excluir "' + peca.nome + '"?')) {
       this.componenteService.excluir(peca.id!).subscribe(() => {
@@ -114,7 +102,6 @@ export class Admin implements OnInit {
     }
   }
 
-  // limpa o formulario e volta para o modo de cadastro
   limpar() {
     this.formulario.reset({ categoria: '', soquete: '', tipoMemoria: '' });
     this.pecaEditando.set(null);
