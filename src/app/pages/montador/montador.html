@@ -2,10 +2,10 @@
 
 <div class="montador">
 
-  <!-- lado esquerdo: escolher as peças -->
+
   <div class="esquerda">
 
-    <!-- abas das categorias -->
+
     <div class="abas">
       @for (cat of categorias(); track cat.id) {
         <button [class.ativa]="cat.slug == categoriaAtual()" (click)="trocarCategoria(cat.slug)">
@@ -14,7 +14,7 @@
       }
     </div>
 
-    <!-- filtros -->
+
     <form class="filtros" [formGroup]="filtros">
       <label>
         Marca
