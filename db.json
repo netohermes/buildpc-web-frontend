@@ -1,0 +1,143 @@
+{
+  "categorias": [
+    { "id": 1, "nome": "Processador", "slug": "processador" },
+    { "id": 2, "nome": "Placa-mãe", "slug": "placa-mae" },
+    { "id": 3, "nome": "Memória RAM", "slug": "memoria-ram" },
+    { "id": 4, "nome": "Placa de Vídeo", "slug": "placa-de-video" },
+    { "id": 5, "nome": "Fonte", "slug": "fonte" },
+    { "id": 6, "nome": "Armazenamento", "slug": "armazenamento" }
+  ],
+
+  "componentes": [
+    {
+      "id": 1, "nome": "AMD Ryzen 5 7600", "marca": "AMD", "categoria": "processador",
+      "soquete": "AM5", "tdp": 65, "benchmark": 78,
+      "descricao": "6 núcleos, 12 threads, até 5.1 GHz",
+      "imagem": "https://placehold.co/300x300?text=Ryzen+5+7600",
+      "precoMercadoLivre": 1199.9, "precoAliexpress": 1089.0,
+      "historico": [1349.9, 1279.9, 1199.9]
+    },
+    {
+      "id": 2, "nome": "Intel Core i5-12400F", "marca": "Intel", "categoria": "processador",
+      "soquete": "LGA1700", "tdp": 117, "benchmark": 70,
+      "descricao": "6 núcleos, 12 threads, até 4.4 GHz",
+      "imagem": "https://placehold.co/300x300?text=i5-12400F",
+      "precoMercadoLivre": 749.9, "precoAliexpress": 689.0,
+      "historico": [829.9, 789.9, 749.9]
+    },
+    {
+      "id": 3, "nome": "Placa-mãe ASUS B650M", "marca": "ASUS", "categoria": "placa-mae",
+      "soquete": "AM5", "tipoMemoria": "DDR5", "tdp": 40, "benchmark": 0,
+      "descricao": "Chipset B650, Micro-ATX, 4 slots DDR5",
+      "imagem": "https://placehold.co/300x300?text=B650M",
+      "precoMercadoLivre": 999.9, "precoAliexpress": 919.0,
+      "historico": [1099.9, 1049.9, 999.9]
+    },
+    {
+      "id": 4, "nome": "Placa-mãe MSI H610M DDR4", "marca": "MSI", "categoria": "placa-mae",
+      "soquete": "LGA1700", "tipoMemoria": "DDR4", "tdp": 35, "benchmark": 0,
+      "descricao": "Chipset H610, Micro-ATX, 2 slots DDR4",
+      "imagem": "https://placehold.co/300x300?text=H610M",
+      "precoMercadoLivre": 549.9, "precoAliexpress": 499.0,
+      "historico": [599.9, 579.9, 549.9]
+    },
+    {
+      "id": 5, "nome": "Memória Kingston Fury 16GB DDR5", "marca": "Kingston", "categoria": "memoria-ram",
+      "tipoMemoria": "DDR5", "tdp": 5, "benchmark": 70,
+      "descricao": "16 GB, 5600 MHz",
+      "imagem": "https://placehold.co/300x300?text=16GB+DDR5",
+      "precoMercadoLivre": 329.9, "precoAliexpress": 279.0,
+      "historico": [369.9, 349.9, 329.9]
+    },
+    {
+      "id": 6, "nome": "Memória Corsair Vengeance 16GB DDR4", "marca": "Corsair", "categoria": "memoria-ram",
+      "tipoMemoria": "DDR4", "tdp": 5, "benchmark": 60,
+      "descricao": "16 GB, 3200 MHz",
+      "imagem": "https://placehold.co/300x300?text=16GB+DDR4",
+      "precoMercadoLivre": 229.9, "precoAliexpress": 189.0,
+      "historico": [249.9, 239.9, 229.9]
+    },
+    {
+      "id": 7, "nome": "Placa de Vídeo RTX 4060 8GB", "marca": "NVIDIA", "categoria": "placa-de-video",
+      "tdp": 115, "benchmark": 80,
+      "descricao": "8 GB GDDR6, DLSS 3",
+      "imagem": "https://placehold.co/300x300?text=RTX+4060",
+      "precoMercadoLivre": 1999.9, "precoAliexpress": 1849.0,
+      "historico": [2299.9, 2149.9, 1999.9]
+    },
+    {
+      "id": 8, "nome": "Placa de Vídeo RX 7600 8GB", "marca": "AMD", "categoria": "placa-de-video",
+      "tdp": 165, "benchmark": 77,
+      "descricao": "8 GB GDDR6, FSR 3",
+      "imagem": "https://placehold.co/300x300?text=RX+7600",
+      "precoMercadoLivre": 1699.9, "precoAliexpress": 1549.0,
+      "historico": [1899.9, 1799.9, 1699.9]
+    },
+    {
+      "id": 9, "nome": "Fonte MSI 650W 80 Plus Bronze", "marca": "MSI", "categoria": "fonte",
+      "potencia": 650, "tdp": 0, "benchmark": 0,
+      "descricao": "650 W, 80 Plus Bronze",
+      "imagem": "https://placehold.co/300x300?text=Fonte+650W",
+      "precoMercadoLivre": 349.9, "precoAliexpress": 319.0,
+      "historico": [389.9, 369.9, 349.9]
+    },
+    {
+      "id": 10, "nome": "Fonte Corsair 850W 80 Plus Gold", "marca": "Corsair", "categoria": "fonte",
+      "potencia": 850, "tdp": 0, "benchmark": 0,
+      "descricao": "850 W, 80 Plus Gold, modular",
+      "imagem": "https://placehold.co/300x300?text=Fonte+850W",
+      "precoMercadoLivre": 749.9, "precoAliexpress": 689.0,
+      "historico": [799.9, 779.9, 749.9]
+    },
+    {
+      "id": 11, "nome": "SSD Kingston NV2 1TB", "marca": "Kingston", "categoria": "armazenamento",
+      "tdp": 7, "benchmark": 65,
+      "descricao": "1 TB, NVMe, 3500 MB/s",
+      "imagem": "https://placehold.co/300x300?text=SSD+1TB",
+      "precoMercadoLivre": 399.9, "precoAliexpress": 349.0,
+      "historico": [449.9, 429.9, 399.9]
+    },
+    {
+      "id": 12, "nome": "SSD WD Blue SN580 1TB", "marca": "Western Digital", "categoria": "armazenamento",
+      "tdp": 6, "benchmark": 72,
+      "descricao": "1 TB, NVMe, 4150 MB/s",
+      "imagem": "https://placehold.co/300x300?text=SN580+1TB",
+      "precoMercadoLivre": 449.9, "precoAliexpress": 409.0,
+      "historico": [499.9, 469.9, 449.9]
+    }
+  ],
+
+  "produtosProntos": [
+    {
+      "id": 1, "nome": "Notebook Gamer Acer Nitro", "tipo": "notebook", "categoriaUso": "Gamer",
+      "descricao": "Core i5, RTX 4050, 16 GB, SSD 512 GB",
+      "imagem": "https://placehold.co/300x200?text=Notebook+Gamer",
+      "precoMercadoLivre": 4999.0, "precoAliexpress": 4799.0
+    },
+    {
+      "id": 2, "nome": "Notebook Lenovo IdeaPad", "tipo": "notebook", "categoriaUso": "Estudo",
+      "descricao": "Ryzen 5, 8 GB, SSD 512 GB",
+      "imagem": "https://placehold.co/300x200?text=Notebook+Estudo",
+      "precoMercadoLivre": 2799.0, "precoAliexpress": 2649.0
+    },
+    {
+      "id": 3, "nome": "PC Gamer Ryzen 5 + RTX 4060", "tipo": "pc", "categoriaUso": "Gamer",
+      "descricao": "Ryzen 5 7600, RTX 4060, 16 GB DDR5, SSD 1 TB",
+      "imagem": "https://placehold.co/300x200?text=PC+Gamer",
+      "precoMercadoLivre": 5999.0, "precoAliexpress": 5699.0
+    },
+    {
+      "id": 4, "nome": "PC Escritório Core i5", "tipo": "pc", "categoriaUso": "Trabalho",
+      "descricao": "Core i5, 16 GB DDR4, SSD 512 GB",
+      "imagem": "https://placehold.co/300x200?text=PC+Escritorio",
+      "precoMercadoLivre": 2899.0, "precoAliexpress": 2749.0
+    }
+  ],
+
+  "usuarios": [
+    { "id": 1, "nome": "Administrador", "email": "admin@buildpc.com", "senha": "admin123", "perfil": "admin" },
+    { "id": 2, "nome": "João Silva", "email": "joao@email.com", "senha": "123456", "perfil": "usuario" }
+  ],
+
+  "montagens": []
+}
