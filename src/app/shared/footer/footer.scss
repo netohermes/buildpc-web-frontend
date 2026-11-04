@@ -1,19 +1,17 @@
 .footer {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 24px;
-  padding: 32px;
-  margin-top: 48px;
-  background: var(--cor-superficie);
-  border-top: 1px solid var(--cor-borda);
-  color: var(--cor-texto-suave);
+  padding: 30px;
+  background-color: #2b2b2b;
+  border-top: 2px solid #ff7f27;
+  color: #cccccc;
+}
 
-  strong {
-    color: var(--cor-texto);
-  }
+.footer strong {
+  color: #ffffff;
+}
 
-  p {
-    margin: 4px 0 0;
-  }
+.footer p {
+  margin-top: 5px;
+  margin-bottom: 0;
 }
