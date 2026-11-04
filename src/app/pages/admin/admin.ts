@@ -1,5 +1,6 @@
 import { Component, OnInit, signal } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ComponenteService } from '../../services/componente-service';
 import { Componente } from '../../models/componente';
 
@@ -31,7 +32,7 @@ export class Admin implements OnInit {
     precoAliexpress: new FormControl<number | null>(null, [Validators.required, Validators.min(0.01)])
   });
 
-  constructor(private componenteService: ComponenteService) {
+  constructor(private componenteService: ComponenteService, private router: Router) {
   }
 
   ngOnInit() {
@@ -84,6 +85,10 @@ export class Admin implements OnInit {
         this.carregar();
       });
     }
+  }
+
+  ver(peca: Componente) {
+    this.router.navigate(['/componente', peca.id]);
   }
 
   editar(peca: Componente) {

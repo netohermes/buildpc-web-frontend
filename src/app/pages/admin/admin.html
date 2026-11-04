@@ -130,6 +130,7 @@
       <td>R$ {{ peca.precoMercadoLivre }}</td>
       <td>R$ {{ peca.precoAliexpress }}</td>
       <td>
+        <button class="ver" (click)="ver(peca)">Ver</button>
         <button class="editar" (click)="editar(peca)">Editar</button>
         <button class="excluir" (click)="excluir(peca)">Excluir</button>
       </td>
