@@ -1,0 +1,62 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 16px 32px;
+  background: var(--cor-superficie);
+  border-bottom: 1px solid var(--cor-borda);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--cor-texto);
+  text-decoration: none;
+
+  span {
+    color: var(--cor-destaque);
+  }
+}
+
+.menu {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+
+  a {
+    padding: 8px 14px;
+    border-radius: 8px;
+    color: var(--cor-texto-suave);
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.2s, color 0.2s;
+
+    &:hover {
+      background: var(--cor-fundo);
+      color: var(--cor-texto);
+    }
+
+    &.ativo {
+      background: var(--cor-destaque);
+      color: #fff;
+    }
+  }
+}
+
+.btn-entrar {
+  padding: 8px 18px;
+  border: 1px solid var(--cor-destaque);
+  border-radius: 8px;
+  color: var(--cor-destaque);
+  text-decoration: none;
+  font-weight: 600;
+
+  &:hover {
+    background: var(--cor-destaque);
+    color: #fff;
+  }
+}
