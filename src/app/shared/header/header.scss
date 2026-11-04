@@ -2,61 +2,51 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
-  padding: 16px 32px;
-  background: var(--cor-superficie);
-  border-bottom: 1px solid var(--cor-borda);
-  position: sticky;
-  top: 0;
-  z-index: 10;
+  padding: 15px 30px;
+  background-color: #2b2b2b;
+  border-bottom: 2px solid #ff7f27;
 }
 
 .logo {
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: var(--cor-texto);
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
   text-decoration: none;
-
-  span {
-    color: var(--cor-destaque);
-  }
 }
 
-.menu {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
+.logo span {
+  color: #ff7f27;
+}
 
-  a {
-    padding: 8px 14px;
-    border-radius: 8px;
-    color: var(--cor-texto-suave);
-    text-decoration: none;
-    font-weight: 500;
-    transition: background 0.2s, color 0.2s;
+.menu a {
+  color: #cccccc;
+  text-decoration: none;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
 
-    &:hover {
-      background: var(--cor-fundo);
-      color: var(--cor-texto);
-    }
+.menu a:hover {
+  color: #ffffff;
+  background-color: #3a3a3a;
+}
 
-    &.ativo {
-      background: var(--cor-destaque);
-      color: #fff;
-    }
-  }
+/* link da pagina atual */
+.menu a.ativo {
+  background-color: #ff7f27;
+  color: #ffffff;
 }
 
 .btn-entrar {
-  padding: 8px 18px;
-  border: 1px solid var(--cor-destaque);
-  border-radius: 8px;
-  color: var(--cor-destaque);
+  background-color: #ff7f27;
+  color: #ffffff;
+  padding: 8px 20px;
+  border-radius: 5px;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: bold;
+}
 
-  &:hover {
-    background: var(--cor-destaque);
-    color: #fff;
-  }
+.btn-entrar:hover {
+  background-color: #e06b17;
 }

@@ -1,1 +1,9 @@
-<p>home works!</p>
+<h1>Teste da API</h1>
+
+<p>Total de peças: {{ componentes().length }}</p>
+
+<ul>
+  @for (peca of componentes(); track peca.id) {
+    <li>{{ peca.nome }} - Mercado Livre: R$ {{ peca.precoMercadoLivre }} - AliExpress: R$ {{ peca.precoAliexpress }}</li>
+  }
+</ul>
